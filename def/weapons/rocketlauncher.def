@@ -70,14 +70,14 @@ entityDef weapon_rocketlauncher
 	"joint_world_flash"			"muzzle_flash"
 
 	"inv_weapon"				"weapon_rocketlauncher"
-	"inv_start_ammo_rocketlauncher"	"10"
+	"inv_start_ammo_rocketlauncher"	"50"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_rocket.tga"
 	"inv_name"					"#str_107409"	
 
-	"fireRate"					".8"
-	"reloadRate"				".8"
-	"spread"					"0"
+	"fireRate"					".2"
+	"reloadRate"				".3"
+	"spread"					"10"
 
 	"ammoRegenStep"				"1"
 	"ammoRegenTime"				"1750"
@@ -153,10 +153,10 @@ entityDef weapon_rocketlauncher_mp
 {
 	"inherit"				"weapon_rocketlauncher"
 	
-	"muzzle_kick_time"			"0"
-	"muzzle_kick_maxtime"			"0"
-	"muzzle_kick_angles"			"0 0 0"
-	"muzzle_kick_offset"			"0 0 0"
+	"muzzle_kick_time"			"0.5"
+	"muzzle_kick_maxtime"		"0.5"
+	"muzzle_kick_angles"		"-15 22 0"
+	"muzzle_kick_offset"		"3 0 3"
 	"recoilTime"				"0"
 	"recoilAngles"				"0 0 0"
 	
