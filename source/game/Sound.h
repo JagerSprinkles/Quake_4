@@ -19,7 +19,6 @@ public:
 	void			Save( idSaveGame *savefile ) const;
 	void			Restore( idRestoreGame *savefile );
 
-
 	virtual void	UpdateChangeableSpawnArgs( const idDict *source );
 
 	void			Spawn( void );
