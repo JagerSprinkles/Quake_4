@@ -139,7 +139,7 @@ entityDef weapon_gauntlet
 	"fx_impact_flesh"			"effects/weapons/gauntlet/impact_flesh.fx"
 	"fx_impact_monstermetal"	"effects/weapons/gauntlet/impact_monstermetal.fx"
 	//"range"						"32"
-	"range"						"48"
+	"range"						"64"
 	//"fireRate"					".075"
 	"fireRate"					".4"
 
@@ -194,16 +194,16 @@ model weapon_gauntlet_world
 
 entityDef damage_gauntlet
 {
-	"damage"					"50"
+	"damage"					"34"
 	"gib"						"1"
 
 	"dv_time"					"100"
 	"dv_scale"					".05"
 
 	"deathPush"					"200"
-	"deathPushMin"				"2000 400"
+	"deathPushMin"				"200 400"
 	"deathPushMax"				"4000 500"
-	"knockback"					"50"
+	"knockback"					"5000"
 	
 	"bleed"						"1"
 }
