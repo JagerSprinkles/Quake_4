@@ -79,12 +79,12 @@ entityDef weapon_shotgun
 	"joint_view_guiLight"			"body"
 	"joint_world_flash"			"muzzle_flash"
 
-	"fireRate"				".8"
-	"spread"				"7"
+	"fireRate"				".4"
+	"spread"				"9"
 	"hitscans"				"10"
 
 	"inv_weapon"				"weapon_shotgun"
-	"inv_start_ammo_shotgun"		"10"
+	"inv_start_ammo_shotgun"		"30"
 	"inv_item"				"1"
 	"inv_icon"				"gfx/guis/hud/icons/item_shotgun.tga"
 	"inv_name"				"#str_107410"
@@ -98,7 +98,7 @@ entityDef weapon_shotgun
 	"gui"					"guis/weapons/shotgun_ammo.gui"
 	"mtr_icon"				"gfx/guis/hud/icons/gun_shotgun"
 
-	"muzzle_kick_time"			"0.5"
+	"muzzle_kick_time"			"0.8"
 	"muzzle_kick_maxtime"			"0.8"
 	"muzzle_kick_angles"			"0 0 0"
 	"muzzle_kick_offset"			"5.5 .15 .15" // 1 1 2" //"2.5 1 2"
@@ -155,20 +155,20 @@ entityDef weapon_shotgun_mp
 	"hidesurface"				"models/weapons/shotgun/clip"
 	// q3 style spread
 	"shotgunSpreadStyle"			"1"
-	"spread"				"700"
-	"hitscans"				"11"
+	"spread"				"1000"
+	"hitscans"				"15"
 	"editor_ignore"				"1"
 	"range"					"131072"
-	"fireRate"				"1.0"
+	"fireRate"				"0.5"
 	"inv_icon"				"gfx/guis/hud/icons/item_shotgun_colored"
 	"triggerSize"				"32"
 	
-	"muzzle_kick_time"			"0"
-	"muzzle_kick_maxtime"			"0"
+	"muzzle_kick_time"			"0.8"
+	"muzzle_kick_maxtime"			"0.8"
 	"muzzle_kick_angles"			"0 0 0"
-	"muzzle_kick_offset"			"0 0 0"
-	"recoilTime"				"0"
-	"recoilAngles"				"0 0 0"
+	"muzzle_kick_offset"			"5.5 .15 .15" // 1 1 2" //"2.5 1 2"
+	"recoilTime"				"600"
+	"recoilAngles"				"-.25 0 -0.42"
 	"respawn_Team DM"			"30"
 	"respawn_Tourney"			"15"
 }
@@ -336,14 +336,14 @@ entityDef damage_pellet
 	"splat_size"				"128"
 	
 	"deathPush"					"100"
-	"deathPushMin"				"4000 500"
+	"deathPushMin"				"400 500"
 	"deathPushMax"				"9000 600"
 }
 
 entityDef damage_pellet_mp
 {
 	"inherit"					"damage_pellet"
-	"knockback"					"10"
+	"knockback"					"100"
 	"damage"					"10"
 }
 
