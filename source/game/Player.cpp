@@ -333,9 +333,9 @@ void idInventory::RestoreInventory( idPlayer *owner, const idDict &dict ) {
 	//Clear();
 
 	// health/armor
-	maxHealth		= dict.GetInt( "maxhealth", "100" );
+	maxHealth		= dict.GetInt( "maxhealth", "200" );
 	armor			= dict.GetInt( "armor", "50" );
-	maxarmor		= dict.GetInt( "maxarmor", "100" );
+	maxarmor		= dict.GetInt( "maxarmor", "200" );
 
 	// ammo
 	for( i = 0; i < MAX_AMMOTYPES; i++ ) {
@@ -2993,7 +2993,7 @@ void idPlayer::RestorePersistantInfo( void ) {
 	spawnArgs.Copy( gameLocal.persistentPlayerInfo[entityNumber] );
 
 	inventory.RestoreInventory( this, spawnArgs );
- 	health = spawnArgs.GetInt( "health", "100" );
+ 	health = spawnArgs.GetInt( "health", "150" );
  	if ( !gameLocal.isClient ) {
  		idealWeapon = spawnArgs.GetInt( "current_weapon", "0" );
  	}
@@ -4109,9 +4109,10 @@ bool idPlayer::Give( const char *statname, const char *value, bool dropped ) {
 		amount = atoi( value );
 
 		inventory.armor += amount;
+		/* 
 		if ( inventory.armor > boundaryArmor ) {
 			 inventory.armor = boundaryArmor;
-		}
+		} */
 		nextArmorPulse = gameLocal.time + ARMOR_PULSE;
 	} else if ( !idStr::Icmp( statname, "air" ) ) {
 		if ( airTics >= pm_airTics.GetInteger() ) {
@@ -6498,9 +6499,10 @@ bool idPlayer::HandleSingleGuiCommand( idEntity *entityGui, idLexer *src ) {
 				entityGui->GetRenderEntity()->gui[ 0 ]->SetStateInt( "gui_parm1", _health );
 			}
 			health += amt;
+			/*
 			if ( health > 100 ) {
 				health = 100;
-			}
+			}*/
 		}
 		return true;
 	}

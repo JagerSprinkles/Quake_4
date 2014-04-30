@@ -443,10 +443,22 @@ stateResult_t rvWeaponRocketLauncher::State_Fire ( const stateParms_t& parms ) {
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
+
+	float dmg = -1.0; 
+
 	switch ( parms.stage ) {
 		case STAGE_INIT:
-			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));		
-			Attack ( false, 1, spread, 0, 1.0f );
+			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
+			
+			//dmg = -50;
+			while ( dmg < -0.69)
+			dmg = gameLocal.random.CRandomFloat(); //leaning more to damamge then heal.
+
+			if ( dmg < 0.2 && dmg > -0.2)
+			dmg = 0.0; // change to do nothing!
+
+			common->Printf("damage %f \n", dmg);
+			Attack ( false, 1, spread, 0, dmg );
 			PlayAnim ( ANIMCHANNEL_LEGS, "fire", parms.blendFrames );	
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
