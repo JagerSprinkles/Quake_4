@@ -2597,6 +2597,9 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, power );
 		} else {
 			LaunchProjectiles( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, fuseOffset, power );
+			muzzleOrigin.x += 14;
+			muzzleOrigin.y += 20;
+			LaunchProjectiles( dict, muzzleOrigin, muzzleAxis, num_attacks * 2, spread, fuseOffset, power );
 		}
 		//asalmon:  changed to keep stats even in single player 
 		statManager->WeaponFired( owner, weaponIndex, num_attacks );

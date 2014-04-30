@@ -379,7 +379,7 @@ entityDef projectile_rocket_homing
 
 entityDef damage_rocketDirect 
 {
-	"damage"					"100"
+	"damage"					"69"
 	"push"						"45000"
 	"gib"						"1"
 
@@ -401,7 +401,7 @@ entityDef damage_rocketDirect_mp
 
 entityDef damage_rocketSplash 
 {
-	"damage"					"69"
+	"damage"					"42"
 	"radius"					"180"
 	"knockback"					"100"
 	"push"						"10000"

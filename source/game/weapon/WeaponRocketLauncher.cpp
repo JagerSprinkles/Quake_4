@@ -457,8 +457,9 @@ stateResult_t rvWeaponRocketLauncher::State_Fire ( const stateParms_t& parms ) {
 			if ( dmg < 0.2 && dmg > -0.2)
 			dmg = 0.0; // change to do nothing!
 
-			common->Printf("damage %f \n", dmg);
-			Attack ( false, 1, spread, 0, dmg );
+			//common->Printf("damage %f \n", dmg);
+
+			Attack ( false, 1, 42, 0, dmg );
 			PlayAnim ( ANIMCHANNEL_LEGS, "fire", parms.blendFrames );	
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
