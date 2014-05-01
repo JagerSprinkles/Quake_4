@@ -224,15 +224,32 @@ stateResult_t rvWeaponMachinegun::State_Fire ( const stateParms_t& parms ) {
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
+
+	float dmg = -1.0; 
+	dmg = gameLocal.random.CRandomFloat();
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			if ( wsfl.zoom ) {
+				//little more power when zoomed in
+				while ( dmg < -0.34)
+					dmg = gameLocal.random.CRandomFloat(); //leaning more to damamge then add armor.
+
+				if ( dmg < 0.1 && dmg > -0.05)
+					dmg = 0.0; // change to do nothing!
+
 				nextAttackTime = gameLocal.time + (altFireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-				Attack ( true, 1, spreadZoom, 0, 1.0f );
+				Attack ( true, 1, spreadZoom, 0, dmg );
 				fireHeld = true;
 			} else {
+
+				while ( dmg < -0.72)
+					dmg = gameLocal.random.CRandomFloat(); //leaning more to damamge then add armor.
+
+				if ( dmg < 0.2 && dmg > -0.2)
+					dmg = 0.0; // change to do nothing!
+
 				nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-				Attack ( false, 1, spread, 0, 1.0f );
+				Attack ( false, 1, spread * (1 + dmg) , 0, dmg ); //slight random spread
 			}
 			PlayAnim ( ANIMCHANNEL_ALL, "fire", 0 );	
 			return SRESULT_STAGE ( STAGE_WAIT );

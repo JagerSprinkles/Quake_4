@@ -450,16 +450,16 @@ stateResult_t rvWeaponRocketLauncher::State_Fire ( const stateParms_t& parms ) {
 		case STAGE_INIT:
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 			
-			//dmg = -50;
+		
 			while ( dmg < -0.69)
-			dmg = gameLocal.random.CRandomFloat(); //leaning more to damamge then heal.
+				dmg = gameLocal.random.CRandomFloat(); //leaning more to damamge then add armor
 
 			if ( dmg < 0.2 && dmg > -0.2)
-			dmg = 0.0; // change to do nothing!
+				dmg = 0.0; // change to do nothing!
 
 			//common->Printf("damage %f \n", dmg);
 
-			Attack ( false, 1, 42, 0, dmg );
+			Attack ( false, 1, spread, 0, dmg );
 			PlayAnim ( ANIMCHANNEL_LEGS, "fire", parms.blendFrames );	
 			return SRESULT_STAGE ( STAGE_WAIT );
 	

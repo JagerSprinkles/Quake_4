@@ -87,13 +87,13 @@ entityDef weapon_machinegun
 	"joint_world_flash"			"muzzle_flash"
 
 	"inv_weapon"				"weapon_machinegun"
-	"inv_start_ammo_machinegun"		"40"
+	"inv_start_ammo_machinegun"		"500"
 	"inv_item"					"1"
 	"inv_icon"					"gfx/guis/hud/icons/item_machinegun.tga"
 	"inv_name"					"#str_107406"
 
 	"fireRate"					".1"
-	"spread"					"2"
+	"spread"					"17"
 
 	"mtr_crosshair"				"gfx/guis/crosshairs/crosshair_machinegun"
 	"def_hitscan"				"hitscan_bullet"
@@ -101,7 +101,7 @@ entityDef weapon_machinegun
 	
 	"ammoType"					"ammo_machinegun"
 	"ammoRequired"				"1"
-	"clipSize"					"40"
+	"clipSize"					"500"
 	"lowAmmo"					"10"
 	"gui"						"guis/weapons/machinegun_ammo.gui"
 	"gui2"						"guis/weapons/machinegun_inview_scope.gui"
@@ -172,7 +172,7 @@ entityDef weapon_machinegun
 	"weaponOffsetScale"			"0.002"
 
 	// Scope / Zoom
-	"spreadzoom"				"0"
+	"spreadzoom"				"4"
 	"zoomFov"					"50"
 	"zoomTime"					".1"
 	"zoomHideCrosshair"			"0"
@@ -245,7 +245,7 @@ entityDef wpmod_machinegun_ammo
 	"mod_showsurface"			"models/weapons/machinegun/clip_large"
 	"mod_hidesurface"			"models/weapons/machinegun/clip_small"
 
-	"clipSize"					"80"
+	"clipSize"					"400"
 }
 
 entityDef weaponmod_machinegun_ammo
@@ -373,8 +373,8 @@ entityDef hitscan_zoomed_bullet
 entityDef damage_machinegun
 {
 	"inherit"					"damage_bullet"
-	"damage"					"15"
-	"damage_flesh"				"18"
+	"damage"					"5"
+	"damage_flesh"				"8"
 
 	"deathPush"					"100"
 	"deathPushMin"				"3000 350"
@@ -384,7 +384,7 @@ entityDef damage_machinegun
 entityDef damage_machinegun_flesh
 {
 	"inherit"					"damage_machinegun"
-	"damage"					"18"
+	"damage"					"8"
 }
 
 //---------------------------------------------------------------
@@ -393,14 +393,14 @@ entityDef damage_machinegun_flesh
 entityDef damage_machinegun_zoom
 {
 	"inherit"					"damage_machinegun"
-	"damage"					"20"
-	"damage_flesh"				"24"
+	"damage"					"14"
+	"damage_flesh"				"15"
 }
 
 entityDef damage_machinegun_zoom_flesh
 {
 	"inherit"					"damage_machinegun"
-	"damage"					"24"
+	"damage"					"15"
 }
 
 //---------------------------------------------------------------
