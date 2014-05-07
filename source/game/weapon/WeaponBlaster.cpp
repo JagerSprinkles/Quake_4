@@ -401,7 +401,10 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 	enum {
 		FIRE_INIT,
 		FIRE_WAIT,
-	};	
+	};
+
+	float dmg = -1.0; 
+	dmg = gameLocal.random.CRandomFloat();
 	switch ( parms.stage ) {
 		case FIRE_INIT:	
 
@@ -424,10 +427,14 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 				return SRESULT_DONE;
 			}
 
+					
+			
 
+			if ( dmg < 0.3 && dmg > -0.2)
+				dmg = 0.0; // change to do nothing!
 	
 			if ( gameLocal.time - fireHeldTime > chargeTime ) {	
-				Attack ( true, 1, spread, 0, 1.0f );
+				Attack ( true, 1, spread * (gameLocal.random.RandomFloat() * 10), 0, 1.0f );
 				PlayEffect ( "fx_chargedflash", barrelJointView, false );
 				PlayAnim( ANIMCHANNEL_ALL, "chargedfire", parms.blendFrames );
 			} else {
