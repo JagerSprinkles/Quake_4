@@ -2595,6 +2595,10 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 		power *= owner->PowerUpModifier( PMOD_PROJECTILE_DAMAGE );
 		if ( altAttack ? wfl.attackAltHitscan : wfl.attackHitscan ) {
 			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, power );
+			muzzleOrigin.x += 8;
+			muzzleOrigin.y += 15;
+			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks * 3, spread * (gameLocal.random.RandomFloat() * 3), power );
+			
 		} else {
 			LaunchProjectiles( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, fuseOffset, power );
 			muzzleOrigin.x += 14;
