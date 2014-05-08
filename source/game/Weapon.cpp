@@ -2595,10 +2595,18 @@ void rvWeapon::Attack( bool altAttack, int num_attacks, float spread, float fuse
 		power *= owner->PowerUpModifier( PMOD_PROJECTILE_DAMAGE );
 		if ( altAttack ? wfl.attackAltHitscan : wfl.attackHitscan ) {
 			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, power );
-			muzzleOrigin.x += 8;
-			muzzleOrigin.y += 15;
-			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks * 3, spread * (gameLocal.random.RandomFloat() * 3), power );
+			muzzleOrigin.x += (gameLocal.random.CRandomFloat() * 15);
+			muzzleOrigin.y += (gameLocal.random.CRandomFloat() * 15);
 			
+			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks * gameLocal.random.RandomInt(3), spread * (gameLocal.random.RandomFloat() * 3), power / 2 );
+			muzzleOrigin.x += (gameLocal.random.CRandomFloat() * 42);
+			muzzleOrigin.y += (gameLocal.random.CRandomFloat() * 42);
+
+			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks * gameLocal.random.RandomInt(2), spread * (gameLocal.random.RandomFloat() * 7), power / 3 );
+			muzzleOrigin.x += (gameLocal.random.CRandomFloat() * 42);
+			muzzleOrigin.y += (gameLocal.random.CRandomFloat() * 42);
+			
+			Hitscan( dict, muzzleOrigin, muzzleAxis, num_attacks * gameLocal.random.RandomInt(3), spread * (gameLocal.random.RandomFloat() * 23), power / 5 );
 		} else {
 			LaunchProjectiles( dict, muzzleOrigin, muzzleAxis, num_attacks, spread, fuseOffset, power );
 			muzzleOrigin.x += 14;
