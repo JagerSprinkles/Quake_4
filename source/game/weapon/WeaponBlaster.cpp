@@ -428,7 +428,7 @@ stateResult_t rvWeaponBlaster::State_Fire ( const stateParms_t& parms ) {
 			}
 
 					
-			
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_grunt");
 
 			if ( dmg < 0.3 && dmg > -0.2)
 				dmg = 0.0; // change to do nothing!

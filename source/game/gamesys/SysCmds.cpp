@@ -1110,6 +1110,9 @@ void Cmd_Trigger_f( const idCmdArgs &args ) {
 Cmd_Spawn_f
 ===================
 */
+
+
+
 void Cmd_Spawn_f( const idCmdArgs &args ) {
 #ifndef _MPBETA
 	const char *key, *value;

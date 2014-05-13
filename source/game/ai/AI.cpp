@@ -3681,6 +3681,50 @@ void idAI::OnDeath( void ){
 	}
 
 	aiManager.RemoveTeammate ( this );
+	
+	
+
+	int x = gameLocal.random.RandomInt(20);
+	common->Printf("this = %d \n", x);
+	switch ( x )
+	{
+		case 10:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_strogg_marine");
+			break;
+		case 9:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn char_marine_tech_armed");
+			break;
+		case 8:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_strogg_marine");
+			break;
+		case 7:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_gunner");
+			break;
+		case 6:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_berserker");
+			break;
+		case 5:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_grunt");
+			break;
+		case 4:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn char_marine");
+			break;
+		case 3:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_gunner");
+			break;
+		case 2:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_network_guardian");
+			break;
+		case 1:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_strogg_marine_sgun");
+			break;
+		case 0:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn char_marine_medic_armed");
+			break;
+		default:
+			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn light");
+			break;
+	}
 
 	ExecScriptFunction( funcs.death );
 

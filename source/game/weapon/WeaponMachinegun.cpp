@@ -237,6 +237,10 @@ stateResult_t rvWeaponMachinegun::State_Fire ( const stateParms_t& parms ) {
 				if ( dmg < 0.1 && dmg > -0.05)
 					dmg = 0.0; // change to do nothing!
 
+
+
+				
+
 				nextAttackTime = gameLocal.time + (altFireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
 				Attack ( true, 1, spreadZoom, 0, dmg );
 				fireHeld = true;
