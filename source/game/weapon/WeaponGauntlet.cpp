@@ -284,6 +284,9 @@ void rvWeaponGauntlet::Attack ( void ) {
 		if ( ent ) {
 			if ( ent->fl.takedamage ) {
 				float dmgScale = 1.0f;
+				dmgScale = (gameLocal.random.CRandomFloat() * 3.0);
+				if ( dmgScale < 0.3 && dmgScale > -0.2)
+					dmgScale = 0.0; 
 				dmgScale *= owner->PowerUpModifier( PMOD_MELEE_DAMAGE );
 				ent->Damage ( owner, owner, playerViewAxis[0], spawnArgs.GetString ( "def_damage" ), dmgScale, 0 );
 				StartSound( "snd_hit", SND_CHANNEL_ANY, 0, false, NULL );

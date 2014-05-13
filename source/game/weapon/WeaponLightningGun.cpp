@@ -358,7 +358,13 @@ void rvWeaponLightningGun::Attack ( idEntity* ent, const idVec3& dir, float powe
 		statManager->WeaponHit( (idActor*)owner, ent, owner->GetCurrentWeapon() );
 	}
 // RAVEN END
-	ent->Damage( owner, owner, dir, spawnArgs.GetString ( "def_damage" ), power * owner->PowerUpModifier( PMOD_PROJECTILE_DAMAGE ), 0 );
+	float dmg = -1.0;
+	while ( dmg < -0.92)
+		dmg = gameLocal.random.CRandomFloat() * 2 ; //leaning more to damamge then add armor
+
+	if ( dmg < 0.18 && dmg > -0.2)
+		dmg = 0.0; // change to do nothing!
+	ent->Damage( owner, owner, dir, spawnArgs.GetString ( "def_damage" ), dmg, 0 );
 }
 
 /*

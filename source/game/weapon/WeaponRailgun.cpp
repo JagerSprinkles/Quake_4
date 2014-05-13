@@ -184,10 +184,18 @@ stateResult_t rvWeaponRailgun::State_Fire ( const stateParms_t& parms ) {
 		STAGE_INIT,
 		STAGE_WAIT,
 	};	
+	float dmg = -1.0;
 	switch ( parms.stage ) {
 		case STAGE_INIT:
 			nextAttackTime = gameLocal.time + (fireRate * owner->PowerUpModifier ( PMOD_FIRERATE ));
-			Attack ( false, 1, spread, 0, 1.0f );
+
+			while ( dmg < -0.85)
+				dmg = gameLocal.random.CRandomFloat();  //leaning more to damamge then add armor
+
+			if ( dmg < 0.2 && dmg > -0.3)
+				dmg = 0.0; // change to do nothing!
+
+			Attack ( false, 1, gameLocal.random.RandomInt(5), 0, dmg );
 			PlayAnim ( ANIMCHANNEL_ALL, "fire", 0 );	
 			return SRESULT_STAGE ( STAGE_WAIT );
 	
