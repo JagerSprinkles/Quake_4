@@ -653,7 +653,7 @@ void idAI::Spawn( void ) {
  	combat.visCrouchHeight			= spawnArgs.GetFloat( "visCrouchHeight", "48" );
  	combat.earRange					= spawnArgs.GetFloat( "earRange", "4096" );
  	combat.awareRange				= spawnArgs.GetFloat( "awareRange", "420" );
- 	combat.aggressiveRange			= spawnArgs.GetFloat( "aggressiveRange", "34" );
+ 	combat.aggressiveRange			= spawnArgs.GetFloat( "aggressiveRange", "142" );
  	combat.maxLostVisTime			= SEC2MS ( spawnArgs.GetFloat ( "maxLostVisTime", "100" ) );
  	combat.tacticalPainThreshold    = spawnArgs.GetInt ( "tactical_painThreshold", va("%d", health / 4) );
 	combat.coverValidTime			= 0;
