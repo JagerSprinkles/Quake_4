@@ -648,13 +648,13 @@ void idAI::Spawn( void ) {
 	combat.hideRange				= spawnArgs.GetVec2 ( "hideRange", "150 750" );
 	combat.attackRange				= spawnArgs.GetVec2 ( "attackRange", "0 1000" );
 	combat.attackSightDelay			= SEC2MS ( spawnArgs.GetFloat ( "attackSightDelay", "1" ) );
- 	combat.visRange					= spawnArgs.GetFloat( "visRange", "2048" );
+ 	combat.visRange					= spawnArgs.GetFloat( "visRange", "4096" );
  	combat.visStandHeight			= spawnArgs.GetFloat( "visStandHeight", "68" );
  	combat.visCrouchHeight			= spawnArgs.GetFloat( "visCrouchHeight", "48" );
- 	combat.earRange					= spawnArgs.GetFloat( "earRange", "2048" );
- 	combat.awareRange				= spawnArgs.GetFloat( "awareRange", "150" );
- 	combat.aggressiveRange			= spawnArgs.GetFloat( "aggressiveRange", "0" );
- 	combat.maxLostVisTime			= SEC2MS ( spawnArgs.GetFloat ( "maxLostVisTime", "10" ) );
+ 	combat.earRange					= spawnArgs.GetFloat( "earRange", "4096" );
+ 	combat.awareRange				= spawnArgs.GetFloat( "awareRange", "420" );
+ 	combat.aggressiveRange			= spawnArgs.GetFloat( "aggressiveRange", "34" );
+ 	combat.maxLostVisTime			= SEC2MS ( spawnArgs.GetFloat ( "maxLostVisTime", "100" ) );
  	combat.tacticalPainThreshold    = spawnArgs.GetInt ( "tactical_painThreshold", va("%d", health / 4) );
 	combat.coverValidTime			= 0;
 	combat.maxInvalidCoverTime		= SEC2MS ( spawnArgs.GetFloat ( "maxInvalidCoverTime", "1" ) );
@@ -3685,7 +3685,7 @@ void idAI::OnDeath( void ){
 	
 
 	int x = gameLocal.random.RandomInt(20);
-	common->Printf("this = %d \n", x);
+
 	switch ( x )
 	{
 		case 10:
@@ -3713,6 +3713,7 @@ void idAI::OnDeath( void ){
 			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_gunner");
 			break;
 		case 2:
+			if (gameLocal.random.RandomInt(5)>3)
 			cmdSystem->BufferCommandText(CMD_EXEC_NOW,"spawn monster_network_guardian");
 			break;
 		case 1:

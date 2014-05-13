@@ -366,9 +366,9 @@ private:
 */
 
 const float	AI_TURN_SCALE				= 60.0f;
-const float	AI_SEEK_PREDICTION			= 0.3f;
+const float	AI_SEEK_PREDICTION			= 0.6f;
 const float	AI_FLY_DAMPENING			= 0.15f;
-const float	AI_HEARING_RANGE			= 2048.0f;
+const float	AI_HEARING_RANGE			= 4096.0f;
 const float AI_COVER_MINRANGE			= 4.0f;
 const float AI_PAIN_LOOP_DELAY			= 200;
 const int	DEFAULT_FLY_OFFSET			= 68.0f;

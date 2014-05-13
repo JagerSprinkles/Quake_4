@@ -93,9 +93,9 @@ entityDef actor_default
 
 	"forceEnemy"							"1"
 
-	"fov"									"140"
+	"fov"									"270"
 	"remove_on_death"						"0"
-	"melee_range"							"64"
+	"melee_range"							"84"
 
 	"painThreshold"							"1"
 
@@ -107,7 +107,7 @@ entityDef actor_default
 
 	// ---------------------------- Actions -----------------------------------------
 	
-	"attackSightDelay"						".75"
+	"attackSightDelay"						".1"
 	
 	"action_talk_noturn" "0"
 	
@@ -119,7 +119,7 @@ entityDef actor_default
 	"action_jumpBack_anim"					"jump_back"
 	
 	"action_meleeAttack_minRange"			"0"
-	"action_meleeAttack_maxRange"			"64"
+	"action_meleeAttack_maxRange"			"84"
 	"action_meleeAttack_anim"				"melee_attack"
 
 	"action_rangedAttack_minRange"			"63"
