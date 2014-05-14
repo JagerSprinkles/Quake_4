@@ -4210,7 +4210,7 @@ idEntity *idAI::FindEnemy ( bool inFov, bool forceNearest, float maxDistSqr ){
 	bestThreatBackup = 0.0f;
 	bestEnemy		 = NULL;
 	bestEnemyBackup	 = NULL;
-	awareRangeSqr	 = Square ( combat.awareRange );
+	awareRangeSqr	 = Square ( combat.awareRange )*3;
 	enemyRangeSqr	 = enemy.ent ? Square ( enemy.range ) : Square ( combat.attackRange[1] );
 	origin			 = GetEyePosition ( );
 
@@ -4248,7 +4248,7 @@ idEntity *idAI::FindEnemy ( bool inFov, bool forceNearest, float maxDistSqr ){
 		// awareRange on creatures to simulate them looking behind them, or noticing someone standing around for too long.
 		// Modders take note, this will prevent most "sneaking up on bad guys" action because they will likely spike their aware ranges out
 		// during the sneaking.
-		if( gameLocal.random.RandomFloat() < 0.005f )	{
+		if( gameLocal.random.RandomFloat() < 0.05f )	{
 			awareRangeSqr *= 15;
 		}
 
